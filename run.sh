@@ -1,2 +1,2 @@
-node /Users/davidbershadsky/Documents/trinityclubsite/server.js
+node /Users/davidbershadsky/Documents/Trinityclubswebsite/server.js
 
