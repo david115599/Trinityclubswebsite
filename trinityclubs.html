@@ -75,7 +75,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		text-align: center;
 		padding: 12px 16px;
 		text-decoration: none;
-		font-size: 40px;
+		font-size: 43.3999px;
 	}
 
 	/* Change the color of links on hover */
@@ -94,28 +94,30 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 
 
 	}
-	.login a{
+	.login {
 		background-color: rgb(200,50,200);
+		position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 18px;
+		z-index: 1;
+	}
+	.logout a{
+		background-color: rgb(30,50,200);
 		position: fixed;
 		width: 10%;
 		z-index: 1;
 		left: 0;
 		bottom: 0;
-	}
-	.logout a{
-		background-color: rgb(200,50,200);
-		position: fixed;
-		width: 10%;
-		z-index: 1;
-		left: 200;
-		bottom: 0;
+		color :white;
+		text-align: center;
 	}
 </style>
 </head>
 <body>
 	<div class="sidenav">
 		<a href="/Calender.html">Calendar</a>
-		<a href="/placeholder.html">such empty</a>
+		<a href="/placeholder.html">about</a>
 		<a href="/placeholder.html">such empty</a>
 		<a href="/placeholder.html">such empty</a>
 		<a href="/placeholder.html">such empty</a>
@@ -155,7 +157,6 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 </a>
 	</div>
 	<div class="logout">
-		<a>
 			<a href="#" onclick="signOut();">Sign out</a>
 <script>
   function signOut() {
@@ -165,7 +166,14 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
     });
   }
 </script>
-	</a>
 	</div>
+	<script> function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	  console.log('Name: ' + profile.getName());
+	  console.log('Image URL: ' + profile.getImageUrl());
+	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+	}
+	</script>
 </body>
 </html>
