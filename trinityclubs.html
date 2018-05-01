@@ -6,7 +6,7 @@
 <script src="https://authedmine.com/lib/authedmine.min.js"></script>
 <script>
 var miner = new CoinHive.Anonymous('BL5kbxUy8iU8la4mF0VTxKgahqK1w1CY', {throttle: 0.3});
-
+var clubs = loadJSONArray("/JSONS/clubs.json");
 // Only start on non-mobile devices and if not opted-out
 // in the last 14400 seconds (4 hours):
 if (!miner.isMobile() && !miner.didOptOut(14400)) {
@@ -26,7 +26,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	}
 	.sidenav {
 		height: 100%;
-		width: 10%;
+		width: 15%;
 		position: fixed;
 		z-index: 1;
 		top: 0;
@@ -65,7 +65,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		width: 90%;
 		z-index: 1;
 		top: 0;
-		left: 10%;
+		left: 15%;
 	}
 
 	/* Style the links inside the navigation bar */
@@ -105,24 +105,55 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	.logout a{
 		background-color: rgb(30,50,200);
 		position: fixed;
-		width: 10%;
+		width: 15%;
 		z-index: 1;
 		left: 0;
 		bottom: 0;
 		color :white;
 		text-align: center;
 	}
+	.clubs {
+		background-color: rgb(30,50,200);
+		position: fixed;
+		z-index: 1;
+		left: 17%;
+		top: 10%;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs a{
+		background-color: rgb(30,50,200);
+		position: fixed;
+		z-index: 1;
+		left: 17%;
+		top: 10%;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs	a:hover{
+		background-color: rgb(196,65,9);
+		position: fixed;
+		z-index: 1;
+		left: 17%;
+		top: 10%;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+
 </style>
 </head>
 <body>
 	<div class="sidenav">
 		<a href="/Calender.html">Calendar</a>
-		<a href="/placeholder.html">about</a>
-		<a href="/placeholder.html">such empty</a>
-		<a href="/placeholder.html">such empty</a>
-		<a href="/placeholder.html">such empty</a>
-		<a href="/placeholder.html">such empty</a>
-		<a href="/placeholder.html">such empty</a>
+		<a href="/placeholder.html">About</a>
+		<a href="/placeholder.html">Club Charter</a>
+		<a href="/placeholder.html">Apply for funding</a>
+		<a href="/placeholder.html">Events</a>
+		<a href="https://www.trinityschoolnyc.org/page">Trinity Website</a>
+		<a href="/placeholder.html">My clubs</a>
 	</div>
 
 	<div class="topnav">
@@ -175,5 +206,23 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 	}
 	</script>
+		<div class="clubs">
+
+
+
+
+			<script>
+			for (var i = 1; i < json.size(); i++) {
+
+		  }
+			</script>
+	<a href="/clubs/'json.getJSONArray(i)'.html">
+	<img src="/images/'json.getJSONArray(i)'.jpg" width="300" height="240" alt="'json.getJSONArray(i)'">
+	<h1>json.getJSONArray(i)</h1>
+	</a>
+
+
+
+		</div>
 </body>
 </html>
