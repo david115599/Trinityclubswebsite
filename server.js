@@ -33,3 +33,15 @@ http.createServer(function (req, res) {
     return res.end();
   });
 }).listen(8080);
+
+
+/*
+var clubs = loadJSONArray("/JSONS/clubs.json");
+
+for (var i = 1; i < json.size(); i++) {
+<a href="/clubs/'json.getJSONArray(i)'.html">
+<img src="/images/'json.getJSONArray(i)'.jpg" width="300" height="240" alt="'json.getJSONArray(i)'">
+<h1>json.getJSONArray(i)</h1>
+</a>
+  }
+*/
