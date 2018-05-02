@@ -2,7 +2,7 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 
-var adr = 'http://localhost:8080/default.htm?year=2017&month=february';
+var adr = 'http://localhost:8080/trinityclubs.html';
 //Parse the address:
 var q = url.parse(adr, true);
 
@@ -13,7 +13,6 @@ console.log(q.search);
 
 /*The query property returns an object with all the querystring parameters as properties:*/
 var qdata = q.query;
-console.log(qdata.month);
 
 
 var http = require('http');
