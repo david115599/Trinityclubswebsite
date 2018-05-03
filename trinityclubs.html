@@ -1,19 +1,26 @@
 
 <!DOCTYPE html>
 <html>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script>
 //JSONArray clubs;
+
+   var nytg = nytg || {};
+   $.getJSON("/JSONS/clubs.json", function(clubs) {
+     nytg.ipoData = clubs
+     console.log(clubs)
+     })
 setInterval(function() {
 console.log(getDateTime());
-document.getElementsByClassName('clubs').innerHTML = '';
-var clubs = loadJSONArray("/JSONS/clubs.json");
-for (var i = 1; i < json.size(); i++) {
-document.getElementsByClassName('clubs').innerHTML += '<a href="/clubs/'+clubs.getJSONArray(i)+'.html">';
-document.getElementsByClassName('clubs').innerHTML += '<img src="/images/'+clubs.getJSONArray(i)+'.jpg" width="300" height="240" alt="'+json.getJSONArray(i)+'">';
-document.getElementsByClassName('clubs').innerHTML += '<h1>'+clubs.getJSONArray(i)+'</h1>';
-document.getElementsByClassName('clubs').innerHTML += '</a>';
+document.getElementsByClassName('clubs')[0].innerHTML = '';
+for (var i = 1; i < (Object((nytg)).length); i++) {
+document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+nytg(i)+'.html">';
+document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+nytg(i)+'.jpg" width="300" height="240" alt="'+nytg(i)+'">';
+document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+nytg(i)+'</h1>';
+document.getElementsByClassName('clubs')[0].innerHTML += '</a>';
   }
-}, 10000);
+}, 1000);
+
 
 function getDateTime() {
 
@@ -245,8 +252,8 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 	}
 	</script>
+  <!--> fills this with for loop from json automaticaly -->
 		<div class="clubs">
-<!--> fills this with for loop from json automaticaly -->
 		</div>
 </body>
 </html>
