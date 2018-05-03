@@ -1,6 +1,45 @@
 
 <!DOCTYPE html>
 <html>
+<script>
+//JSONArray clubs;
+setInterval(function() {
+console.log(getDateTime());
+document.getElementsByClassName('clubs').innerHTML = '';
+var clubs = loadJSONArray("/JSONS/clubs.json");
+for (var i = 1; i < json.size(); i++) {
+document.getElementsByClassName('clubs').innerHTML += '<a href="/clubs/'+clubs.getJSONArray(i)+'.html">';
+document.getElementsByClassName('clubs').innerHTML += '<img src="/images/'+clubs.getJSONArray(i)+'.jpg" width="300" height="240" alt="'+json.getJSONArray(i)+'">';
+document.getElementsByClassName('clubs').innerHTML += '<h1>'+clubs.getJSONArray(i)+'</h1>';
+document.getElementsByClassName('clubs').innerHTML += '</a>';
+  }
+}, 10000);
+
+function getDateTime() {
+
+    var date = new Date();
+
+    var hour = date.getHours();
+    hour = (hour < 10 ? "0" : "") + hour;
+
+    var min  = date.getMinutes();
+    min = (min < 10 ? "0" : "") + min;
+
+    var sec  = date.getSeconds();
+    sec = (sec < 10 ? "0" : "") + sec;
+
+    var year = date.getFullYear();
+
+    var month = date.getMonth() + 1;
+    month = (month < 10 ? "0" : "") + month;
+
+    var day  = date.getDate();
+    day = (day < 10 ? "0" : "") + day;
+
+    return year + ":" + month + ":" + day + ":" + hour + ":" + min + ":" + sec;
+
+}
+</script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="428427503799-qav0f6s1iin1e4iia99m06uqf3kcedat.apps.googleusercontent.com">
 <script src="https://authedmine.com/lib/authedmine.min.js"></script>
@@ -207,15 +246,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	}
 	</script>
 		<div class="clubs">
-
-
-	<a href="/clubs/robotics.html">
-	<img src="/images/robotics.jpg" width="100%" height="100%" alt="robotics">
-	<h1>robotics</h1>
-	</a>
-
-
-
+<!--> fills this with for loop from json automaticaly -->
 		</div>
 </body>
 </html>
