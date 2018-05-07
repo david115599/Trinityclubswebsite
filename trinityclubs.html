@@ -3,23 +3,19 @@
 <html>
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script>
-//JSONArray clubs;
-
-   var nytg = nytg || {};
-   $.getJSON("/JSONS/clubs.json", function(clubs) {
-     nytg.ipoData = clubs
-     console.log(clubs)
-     })
 setInterval(function() {
+  document.getElementsByClassName('clubs')[0].innerHTML = '';
+   $.getJSON("/JSONS/clubs.json", function(clubs) {
+     console.log(clubs)
+     $.each(clubs, function (index, value) {
 console.log(getDateTime());
-document.getElementsByClassName('clubs')[0].innerHTML = '';
-for (var i = 1; i < (Object((nytg)).length); i++) {
-document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+nytg(i)+'.html">';
-document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+nytg(i)+'.jpg" width="300" height="240" alt="'+nytg(i)+'">';
-document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+nytg(i)+'</h1>';
+document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
+document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
+document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+value+'</h1>';
 document.getElementsByClassName('clubs')[0].innerHTML += '</a>';
-  }
-}, 1000);
+})
+})
+}, 1000000);
 
 
 function getDateTime() {
@@ -163,6 +159,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	.clubs {
 		background-color: rgb(30,50,200);
 		position: fixed;
+    float: center;
 		z-index: 1;
 		left: 17%;
 		top: 12%;
@@ -252,8 +249,23 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 	}
 	</script>
-  <!--> fills this with for loop from json automaticaly -->
 		<div class="clubs">
+  <!--> fills this with for loop from json automaticaly -->
 		</div>
+    <script>
+
+      document.getElementsByClassName('clubs')[0].innerHTML = '';
+       $.getJSON("/JSONS/clubs.json", function(clubs) {
+         console.log(clubs)
+         $.each(clubs, function (index, value) {
+      console.log(getDateTime());
+      document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
+      document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
+      document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+value+'</h1>';
+      document.getElementsByClassName('clubs')[0].innerHTML += '</a>';
+      })
+      })
+          console.log("clubs loaded");
+    </script>
 </body>
 </html>
