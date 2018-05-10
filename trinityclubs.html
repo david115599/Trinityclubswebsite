@@ -2,47 +2,6 @@
 <!DOCTYPE html>
 <html>
 <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-<script>
-setInterval(function() {
-  document.getElementsByClassName('clubs')[0].innerHTML = '';
-   $.getJSON("/JSONS/clubs.json", function(clubs) {
-     console.log(clubs)
-     $.each(clubs, function (index, value) {
-console.log(getDateTime());
-document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
-document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
-document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+value+'</h1>';
-document.getElementsByClassName('clubs')[0].innerHTML += '</a>';
-})
-})
-}, 1000000);
-
-
-function getDateTime() {
-
-    var date = new Date();
-
-    var hour = date.getHours();
-    hour = (hour < 10 ? "0" : "") + hour;
-
-    var min  = date.getMinutes();
-    min = (min < 10 ? "0" : "") + min;
-
-    var sec  = date.getSeconds();
-    sec = (sec < 10 ? "0" : "") + sec;
-
-    var year = date.getFullYear();
-
-    var month = date.getMonth() + 1;
-    month = (month < 10 ? "0" : "") + month;
-
-    var day  = date.getDate();
-    day = (day < 10 ? "0" : "") + day;
-
-    return year + ":" + month + ":" + day + ":" + hour + ":" + min + ":" + sec;
-
-}
-</script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="428427503799-qav0f6s1iin1e4iia99m06uqf3kcedat.apps.googleusercontent.com">
 <script src="https://authedmine.com/lib/authedmine.min.js"></script>
@@ -180,11 +139,40 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		background-color: rgb(196,65,9);
 		position: fixed;
 		z-index: 1;
-		width: 25%;
+		width: 20%;
 		color :white;
 		font-size: 10px;
 		text-align: center;
 	}
+  .clubs1 {
+    background-color: rgb(30,50,200);
+    position: fixed;
+    float: center;
+    z-index: 1;
+    left: 38%;
+    top: 12%;
+    color :white;
+    font-size: 10px;
+    text-align: center;
+  }
+  .clubs1 a{
+    background-color: rgb(30,50,200);
+    position: fixed;
+    z-index: 1;
+    width: 20%;
+    color :white;
+    font-size: 10px;
+    text-align: center;
+  }
+  .clubs1	a:hover{
+    background-color: rgb(196,65,9);
+    position: fixed;
+    z-index: 1;
+    width: 25%;
+    color :white;
+    font-size: 10px;
+    text-align: center;
+  }
 
 </style>
 </head>
@@ -252,20 +240,89 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		<div class="clubs">
   <!--> fills this with for loop from json automaticaly -->
 		</div>
+    <div class="clubs1">
+  <!--> fills this with for loop from json automaticaly -->
+    </div>
     <script>
-
+      var side =1;
       document.getElementsByClassName('clubs')[0].innerHTML = '';
+      document.getElementsByClassName('clubs1')[0].innerHTML = '';
        $.getJSON("/JSONS/clubs.json", function(clubs) {
          console.log(clubs)
          $.each(clubs, function (index, value) {
       console.log(getDateTime());
+      if(side==1){
       document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
       document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
       document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+value+'</h1>';
       document.getElementsByClassName('clubs')[0].innerHTML += '</a>';
+      side=0;
+      }
+      if (side==0) {
+        document.getElementsByClassName('clubs1')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
+        document.getElementsByClassName('clubs1')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
+        document.getElementsByClassName('clubs1')[0].innerHTML += '<h1>'+value+'</h1>';
+        document.getElementsByClassName('clubs1')[0].innerHTML += '</a>';
+        side=1;
+      }
       })
       })
           console.log("clubs loaded");
     </script>
 </body>
+
+<script>
+setInterval(function() {
+  var side =1;
+  document.getElementsByClassName('clubs')[0].innerHTML = '';
+  document.getElementsByClassName('clubs1')[0].innerHTML = '';
+   $.getJSON("/JSONS/clubs.json", function(clubs) {
+     console.log(clubs)
+     $.each(clubs, function (index, value) {
+  console.log(getDateTime());
+  if(side==1){
+  document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
+  document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
+  document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+value+'</h1>';
+  document.getElementsByClassName('clubs')[0].innerHTML += '</a>';
+  side=0;
+  }
+  else if (side==0) {
+    document.getElementsByClassName('clubs1')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
+    document.getElementsByClassName('clubs1')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
+    document.getElementsByClassName('clubs1')[0].innerHTML += '<h1>'+value+'</h1>';
+    document.getElementsByClassName('clubs1')[0].innerHTML += '</a>';
+    side=1;
+  }
+})
+})
+}, 1000000);
+
+
+function getDateTime() {
+
+    var date = new Date();
+
+    var hour = date.getHours();
+    hour = (hour < 10 ? "0" : "") + hour;
+
+    var min  = date.getMinutes();
+    min = (min < 10 ? "0" : "") + min;
+
+    var sec  = date.getSeconds();
+    sec = (sec < 10 ? "0" : "") + sec;
+
+    var year = date.getFullYear();
+
+    var month = date.getMonth() + 1;
+    month = (month < 10 ? "0" : "") + month;
+
+    var day  = date.getDate();
+    day = (day < 10 ? "0" : "") + day;
+
+    return year + ":" + month + ":" + day + ":" + hour + ":" + min + ":" + sec;
+
+}
+</script>
+
 </html>
