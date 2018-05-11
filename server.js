@@ -9,7 +9,20 @@ var q = url.parse(adr, true);
 /*The parse method returns an object containing url properties*/
 console.log(q.host);
 console.log(q.pathname);
-//console.log(q.search);
+console.log("    ;;");
+console.log("    ;;");
+console.log("    ;;");
+console.log("    ;;");
+console.log("  ;;;;;;");
+console.log(";;;;;;;;;");
+console.log(";;;;;;;;;;");
+console.log(";;;;;;;;;;");
+console.log(" ;;;;;;;;");
+console.log(" ;;;;;;");
+console.log(" ;;;;;;");
+console.log(" ;;;;;;");
+console.log(" ;;;;;;");
+
 
 /*The query property returns an object with all the querystring parameters as properties:*/
 var qdata = q.query;
