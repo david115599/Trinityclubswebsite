@@ -284,24 +284,24 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
          $.each(clubs, function (index, value) {
       console.log(getDateTime());
 			if(side==2){
-		  document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
-		  document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
-		  document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+value+'</h1>';
-		  document.getElementsByClassName('clubs')[0].innerHTML += '</a>';
+		  document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+value+'.html"> ';
+		  document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> ';
+		  document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+value+'</h1> ';
+		  document.getElementsByClassName('clubs')[0].innerHTML += '</a> ';
 		  side=1;
 		  }
 		  else if (side==1) {
-		    document.getElementsByClassName('clubs1')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
-		    document.getElementsByClassName('clubs1')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
-		    document.getElementsByClassName('clubs1')[0].innerHTML += '<h1>'+value+'</h1>';
-		    document.getElementsByClassName('clubs1')[0].innerHTML += '</a>';
+		    document.getElementsByClassName('clubs1')[0].innerHTML += '<a href="/clubs/'+value+'.html"> ';
+		    document.getElementsByClassName('clubs1')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> ';
+		    document.getElementsByClassName('clubs1')[0].innerHTML += '<h1>'+value+'</h1> ';
+		    document.getElementsByClassName('clubs1')[0].innerHTML += '</a> ';
 		    side=0;
 		  }
 			else if (side==0) {
-				document.getElementsByClassName('clubs2')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
-				document.getElementsByClassName('clubs2')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
-				document.getElementsByClassName('clubs2')[0].innerHTML += '<h1>'+value+'</h1>';
-				document.getElementsByClassName('clubs2')[0].innerHTML += '</a>';
+				document.getElementsByClassName('clubs2')[0].innerHTML += '<a href="/clubs/'+value+'.html"> ';
+				document.getElementsByClassName('clubs2')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> ';
+				document.getElementsByClassName('clubs2')[0].innerHTML += '<h1>'+value+'</h1> ';
+				document.getElementsByClassName('clubs2')[0].innerHTML += '</a> ';
 				side=2;
 			}
       })
@@ -320,24 +320,24 @@ setInterval(function() {
      $.each(clubs, function (index, value) {
   console.log(getDateTime());
   if(side==2){
-  document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
-  document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
-  document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+value+'</h1>';
-  document.getElementsByClassName('clubs')[0].innerHTML += '</a>';
+  document.getElementsByClassName('clubs')[0].innerHTML += '<a href="/clubs/'+value+'.html"> ';
+  document.getElementsByClassName('clubs')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> ';
+  document.getElementsByClassName('clubs')[0].innerHTML += '<h1>'+value+'</h1> ';
+  document.getElementsByClassName('clubs')[0].innerHTML += '</a> ';
   side=1;
   }
   else if (side==1) {
-    document.getElementsByClassName('clubs1')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
-    document.getElementsByClassName('clubs1')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
-    document.getElementsByClassName('clubs1')[0].innerHTML += '<h1>'+value+'</h1>';
-    document.getElementsByClassName('clubs1')[0].innerHTML += '</a>';
+    document.getElementsByClassName('clubs1')[0].innerHTML += '<a href="/clubs/'+value+'.html"> ';
+    document.getElementsByClassName('clubs1')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> ';
+    document.getElementsByClassName('clubs1')[0].innerHTML += '<h1>'+value+'</h1> ';
+    document.getElementsByClassName('clubs1')[0].innerHTML += '</a> ';
     side=0;
   }
 	else if (side==0) {
-		document.getElementsByClassName('clubs2')[0].innerHTML += '<a href="/clubs/'+value+'.html">';
-		document.getElementsByClassName('clubs2')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'">';
-		document.getElementsByClassName('clubs2')[0].innerHTML += '<h1>'+value+'</h1>';
-		document.getElementsByClassName('clubs2')[0].innerHTML += '</a>';
+		document.getElementsByClassName('clubs2')[0].innerHTML += '<a href="/clubs/'+value+'.html"> ';
+		document.getElementsByClassName('clubs2')[0].innerHTML += '<img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> ';
+		document.getElementsByClassName('clubs2')[0].innerHTML += '<h1>'+value+'</h1> ';
+		document.getElementsByClassName('clubs2')[0].innerHTML += '</a> ';
 		side=2;
 	}
 })
