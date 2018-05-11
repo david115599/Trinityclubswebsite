@@ -9,7 +9,7 @@ var q = url.parse(adr, true);
 /*The parse method returns an object containing url properties*/
 console.log(q.host);
 console.log(q.pathname);
-console.log(q.search);
+//console.log(q.search);
 
 /*The query property returns an object with all the querystring parameters as properties:*/
 var qdata = q.query;
@@ -25,7 +25,7 @@ http.createServer(function (req, res) {
   fs.readFile(filename, function(err, data) {
     if (err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
-      return res.end("404 Not Found such empty");
+      return res.end("404 Not Found: (such empty :) )");
     }
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(data);
