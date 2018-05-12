@@ -9,6 +9,7 @@ var q = url.parse(adr, true);
 /*The parse method returns an object containing url properties*/
 console.log(q.host);
 console.log(q.pathname);
+console.log("to view website go to http://localhost:8080/trinityclubs.html");
 
 
 /*The query property returns an object with all the querystring parameters as properties:*/
