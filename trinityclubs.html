@@ -226,6 +226,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 <script>
 	function onSuccess(googleUser) {
 		console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+		onSignIn(googleUser);
 	}
 	function onFailure(error) {
 		console.log(error);
