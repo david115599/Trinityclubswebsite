@@ -225,8 +225,33 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		<div id="my-signin2"></div>
 <script>
 	function onSuccess(googleUser) {
+		var profile;
+		var currentuser;
+		function onSignIn(googleUser) {
+		  profile = googleUser.getBasicProfile();
+		  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		  console.log('Name: ' + profile.getName());
+		  console.log('Image URL: ' + profile.getImageUrl());
+		  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+			currentuser =profile.getEmail();
+		}
 		console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
 		onSignIn(googleUser);
+		$.getJSON("/JSONS/users.json", function(user) {
+			console.log(user);
+		var currentuser = function(currentuser) {
+    var i = null;
+    for (i = 0; user.length > i; i += 1) {
+        if (user[i] === currentuser) {
+            return true;
+						console.log(currentuser + " found");
+        }
+    }
+
+    return false;
+		console.log(currentuser + " not found");
+};
+		})
 	}
 	function onFailure(error) {
 		console.log(error);
@@ -258,14 +283,6 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
   }
 </script>
 	</div>
-	<script> function onSignIn(googleUser) {
-	  var profile = googleUser.getBasicProfile();
-	  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	  console.log('Name: ' + profile.getName());
-	  console.log('Image URL: ' + profile.getImageUrl());
-	  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-	}
-	</script>
 		<div class="clubs">
   <!--> fills this with for loop from json automaticaly -->
 		</div>
