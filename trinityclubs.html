@@ -239,18 +239,21 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		onSignIn(googleUser);
 		$.getJSON("/JSONS/users.json", function(user) {
 			console.log(user);
-		var currentuser = function(currentuser) {
-    var i = null;
-    for (i = 0; user.length > i; i += 1) {
-        if (user[i] === currentuser) {
-            return true;
-						console.log(currentuser + " found");
-        }
-    }
+			var userb = user;
+			var results = [];
+			var searchVal = currentuser;
+			for (var i=0 ; i < user.toString().length ; i++)
+			{
+			    if (user[i] == searchVal) {
+			        results.push(user[i]);
+							console.log("found");
+			    }
+					else{
 
-    return false;
-		console.log(currentuser + " not found");
-};
+					//	make it	write to the json file "("/JSONS/users.json", userb + "[["+currentuser+"]]")";
+
+					}
+			}
 		})
 	}
 	function onFailure(error) {
