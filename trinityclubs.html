@@ -225,37 +225,30 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		<div id="my-signin2"></div>
 <script>
 	function onSuccess(googleUser) {
-		var profile;
-		var currentuser;
-		function onSignIn(googleUser) {
+
 		  profile = googleUser.getBasicProfile();
 		  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
 		  console.log('Name: ' + profile.getName());
 		  console.log('Image URL: ' + profile.getImageUrl());
 		  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-			currentuser =profile.getEmail();
-		}
+
 		console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-		onSignIn(googleUser);
-		$.getJSON("/JSONS/users.json", function(user) {
-			console.log(user);
-			var userb = user;
-			var results = [];
-			var searchVal = currentuser;
-			for (var i=0 ; i < user.toString().length ; i++)
-			{
-			    if (user[i] == searchVal) {
-			        results.push(user[i]);
-							console.log("found");
-			    }
-					else{
 
-					//	make it	write to the json file "("/JSONS/users.json", userb + "[["+currentuser+"]]")";
+		$.ajax({
+    url:'http://localhost:8080/JSONS/'+profile.getEmail()+'.json',
+    type:'HEAD',
+    error: function()
+    {
+        console.log("new user");
 
-					}
-			}
-		})
-	}
+    },
+    success: function()
+    {
+        console.log("old user");
+    }
+});
+
+}
 	function onFailure(error) {
 		console.log(error);
 	}
