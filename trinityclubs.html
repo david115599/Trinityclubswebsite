@@ -128,7 +128,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	}
 	.clubs a{
 		background-color: rgb(30,50,200);
-		position: fixed;
+		position: relative;
 		z-index: 1;
 		width: 300px;
 		color :white;
@@ -137,7 +137,16 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	}
 	.clubs	a:hover{
 		background-color: rgb(196,65,9);
-		position: fixed;
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs	div:hover{
+		background-color: rgb(196,65,9);
+		position: relative;
 		z-index: 1;
 		width: 300px;
 		color :white;
@@ -157,7 +166,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
   }
   .clubs1 a{
     background-color: rgb(30,50,200);
-    position: fixed;
+    position: relative;
     z-index: 1;
     width: 300px;
     color :white;
@@ -166,16 +175,25 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
   }
   .clubs1	a:hover{
     background-color: rgb(196,65,9);
-    position: fixed;
+    position: relative;
     z-index: 1;
     width: 300px;
     color :white;
     font-size: 10px;
     text-align: center;
   }
+	.clubs1	div:hover{
+		background-color: rgb(196,65,9);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
 	.clubs2 {
     background-color: rgb(30,50,200);
-    position: fixed;
+  	position: fixed;
     float: center;
     z-index: 1;
     left: 66%;
@@ -186,7 +204,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
   }
   .clubs2 a{
     background-color: rgb(30,50,200);
-    position: fixed;
+    position: relative;
     z-index: 1;
     width: 300px;
     color :white;
@@ -195,7 +213,16 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
   }
   .clubs2	a:hover{
     background-color: rgb(196,65,9);
-    position: fixed;
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    color :white;
+    font-size: 10px;
+    text-align: center;
+  }
+	.clubs2	div:hover{
+    background-color: rgb(196,65,9);
+    position: relative;
     z-index: 1;
     width: 300px;
     color :white;
@@ -298,15 +325,15 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
          $.each(clubs, function (index, value) {
       console.log(getDateTime());
 			if(side==2){
-		  document.getElementsByClassName('clubs')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div><br /> ';
+		  document.getElementsByClassName('clubs')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>  ';
 		  side=1;
 		  }
 		  else if (side==1) {
-				document.getElementsByClassName('clubs1')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div> <br /> ';
+				document.getElementsByClassName('clubs1')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>   ';
 		    side=0;
 		  }
 			else if (side==0) {
-				document.getElementsByClassName('clubs2')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div><br /> ';
+				document.getElementsByClassName('clubs2')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>  ';
 				side=2;
 			}
       })
@@ -325,15 +352,15 @@ setInterval(function() {
      $.each(clubs, function (index, value) {
   console.log(getDateTime());
 	if(side==2){
-	document.getElementsByClassName('clubs')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div><br /> ';
+	document.getElementsByClassName('clubs')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>  ';
 	side=1;
 	}
 	else if (side==1) {
-		document.getElementsByClassName('clubs1')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div> <br /> ';
+		document.getElementsByClassName('clubs1')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>   ';
 		side=0;
 	}
 	else if (side==0) {
-		document.getElementsByClassName('clubs2')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div><br /> ';
+		document.getElementsByClassName('clubs2')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>  ';
 		side=2;
 	}
 })
