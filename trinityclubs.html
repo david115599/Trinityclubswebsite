@@ -27,12 +27,12 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	.sidenav {
 		height: 100%;
 		width: 15%;
-		position: fixed;
+		position: absolute;
 		z-index: 1;
 		top: 0;
 		left: 0;
 		background-color: rgb(30,50,200);
-		overflow-x: hidden;
+		overflow-x: scroll;
 		padding-top: 20px;
 	}
 
@@ -61,7 +61,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	.topnav {
 		background-color: rgb(196,165,9) ;
 		overflow: hidden;
-		position: fixed;
+		position: absolute;
 		width: 90%;
 		z-index: 1;
 		top: 0;
@@ -116,17 +116,28 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		background-color: rgb(196,165,9);
 	}
 	.clubs {
-		background-color: rgb(30,50,200);
-		position: fixed;
+		position: absolute;
     float: center;
 		z-index: 1;
 		left: 18%;
 		top: 12%;
+		width: 400px;
 		color :white;
 		font-size: 10px;
 		text-align: center;
 	}
-	.clubs a{
+	.clubs div{
+		background-color: rgb(30,50,200);
+		position: relative;
+    float: center;
+		z-index: 1;
+		top: 12%;
+		width: 400px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs div.a{
 		background-color: rgb(30,50,200);
 		position: relative;
 		z-index: 1;
@@ -135,16 +146,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		font-size: 10px;
 		text-align: center;
 	}
-	.clubs	a:hover{
-		background-color: rgb(196,65,9);
-		position: relative;
-		z-index: 1;
-		width: 300px;
-		color :white;
-		font-size: 10px;
-		text-align: center;
-	}
-	.clubs	div:hover{
+	.clubs	div.a:hover{
 		background-color: rgb(196,65,9);
 		position: relative;
 		z-index: 1;
@@ -154,35 +156,37 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		text-align: center;
 	}
   .clubs1 {
-    background-color: rgb(30,50,200);
-    position: fixed;
+    position: absolute;
     float: center;
     z-index: 1;
     left: 42%;
     top: 12%;
+		width: 400px;
     color :white;
     font-size: 10px;
     text-align: center;
   }
-  .clubs1 a{
-    background-color: rgb(30,50,200);
-    position: relative;
-    z-index: 1;
-    width: 300px;
-    color :white;
-    font-size: 10px;
-    text-align: center;
-  }
-  .clubs1	a:hover{
-    background-color: rgb(196,65,9);
-    position: relative;
-    z-index: 1;
-    width: 300px;
-    color :white;
-    font-size: 10px;
-    text-align: center;
-  }
-	.clubs1	div:hover{
+	.clubs1 div{
+		background-color: rgb(30,50,200);
+		position: relative;
+    float: center;
+		z-index: 1;
+		top: 12%;
+		width: 400px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs1 div.a{
+		background-color: rgb(30,50,200);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs1	div.a:hover{
 		background-color: rgb(196,65,9);
 		position: relative;
 		z-index: 1;
@@ -192,43 +196,44 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		text-align: center;
 	}
 	.clubs2 {
-    background-color: rgb(30,50,200);
-  	position: fixed;
+  	position: absolute;
     float: center;
     z-index: 1;
     left: 66%;
     top: 12%;
+		width: 400px;
     color :white;
     font-size: 10px;
     text-align: center;
-  }
-  .clubs2 a{
-    background-color: rgb(30,50,200);
-    position: relative;
-    z-index: 1;
-    width: 300px;
-    color :white;
-    font-size: 10px;
-    text-align: center;
-  }
-  .clubs2	a:hover{
-    background-color: rgb(196,65,9);
-    position: relative;
-    z-index: 1;
-    width: 300px;
-    color :white;
-    font-size: 10px;
-    text-align: center;
-  }
-	.clubs2	div:hover{
-    background-color: rgb(196,65,9);
-    position: relative;
-    z-index: 1;
-    width: 300px;
-    color :white;
-    font-size: 10px;
-    text-align: center;
-  }
+  }.clubs2 div{
+		background-color: rgb(30,50,200);
+		position: relative;
+    float: center;
+		z-index: 1;
+		top: 12%;
+		width: 400px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs2 div.a{
+		background-color: rgb(30,50,200);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs2	div.a:hover{
+		background-color: rgb(196,65,9);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
 </style>
 </head>
 <body>
@@ -306,7 +311,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
   }
 </script>
 	</div>
-		<div class="clubs">
+			<div class="clubs">
   <!--> fills this with for loop from json automaticaly -->
 		</div>
     <div class="clubs1">
@@ -329,11 +334,11 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		  side=1;
 		  }
 		  else if (side==1) {
-				document.getElementsByClassName('clubs1')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>   ';
+				document.getElementsByClassName('clubs1')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a>  </div>  ';
 		    side=0;
 		  }
 			else if (side==0) {
-				document.getElementsByClassName('clubs2')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>  ';
+				document.getElementsByClassName('clubs2')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a> </div>  ';
 				side=2;
 			}
       })
@@ -356,11 +361,11 @@ setInterval(function() {
 	side=1;
 	}
 	else if (side==1) {
-		document.getElementsByClassName('clubs1')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>   ';
+		document.getElementsByClassName('clubs1')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a>  </div>  ';
 		side=0;
 	}
 	else if (side==0) {
-		document.getElementsByClassName('clubs2')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>  ';
+		document.getElementsByClassName('clubs2')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a> </div>  ';
 		side=2;
 	}
 })
