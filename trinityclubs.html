@@ -27,12 +27,12 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	.sidenav {
 		height: 100%;
 		width: 15%;
-		position: absolute;
+		position: fixed;
 		z-index: 1;
 		top: 0;
 		left: 0;
 		background-color: rgb(30,50,200);
-		overflow-x: scroll;
+		overflow-x: hidden;
 		padding-top: 20px;
 	}
 
@@ -61,7 +61,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	.topnav {
 		background-color: rgb(196,165,9) ;
 		overflow: hidden;
-		position: absolute;
+		position: fixed;
 		width: 90%;
 		z-index: 1;
 		top: 0;
@@ -96,7 +96,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	}
 	.login {
 		background-color: rgb(200,50,200);
-		position: absolute;
+		position: fixed;
     top: 0px;
     right: 0px;
     font-size: 18px;
@@ -115,6 +115,9 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	.logout a:hover {
 		background-color: rgb(196,165,9);
 	}
+	a{
+		color :white;
+	}
 	.clubs {
 		position: absolute;
     float: center;
@@ -129,24 +132,13 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	.clubs div{
 		background-color: rgb(30,50,200);
 		position: relative;
-    float: center;
-		z-index: 1;
-		top: 12%;
-		width: 400px;
-		color :white;
-		font-size: 10px;
-		text-align: center;
-	}
-	.clubs div.a{
-		background-color: rgb(30,50,200);
-		position: relative;
 		z-index: 1;
 		width: 300px;
 		color :white;
 		font-size: 10px;
 		text-align: center;
 	}
-	.clubs	div.a:hover{
+	.clubs	div:hover{
 		background-color: rgb(196,65,9);
 		position: relative;
 		z-index: 1;
@@ -169,24 +161,13 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	.clubs1 div{
 		background-color: rgb(30,50,200);
 		position: relative;
-    float: center;
-		z-index: 1;
-		top: 12%;
-		width: 400px;
-		color :white;
-		font-size: 10px;
-		text-align: center;
-	}
-	.clubs1 div.a{
-		background-color: rgb(30,50,200);
-		position: relative;
 		z-index: 1;
 		width: 300px;
 		color :white;
 		font-size: 10px;
 		text-align: center;
 	}
-	.clubs1	div.a:hover{
+	.clubs1	div:hover{
 		background-color: rgb(196,65,9);
 		position: relative;
 		z-index: 1;
@@ -205,18 +186,8 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
     color :white;
     font-size: 10px;
     text-align: center;
-  }.clubs2 div{
-		background-color: rgb(30,50,200);
-		position: relative;
-    float: center;
-		z-index: 1;
-		top: 12%;
-		width: 400px;
-		color :white;
-		font-size: 10px;
-		text-align: center;
-	}
-	.clubs2 div.a{
+  }
+	.clubs2 div{
 		background-color: rgb(30,50,200);
 		position: relative;
 		z-index: 1;
@@ -225,7 +196,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		font-size: 10px;
 		text-align: center;
 	}
-	.clubs2	div.a:hover{
+	.clubs2	div:hover{
 		background-color: rgb(196,65,9);
 		position: relative;
 		z-index: 1;
@@ -246,7 +217,15 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		<a href="https://www.trinityschoolnyc.org/page">Trinity Website</a>
 		<a href="/placeholder.html">My clubs</a>
 	</div>
-
+	<div class="clubs">
+	<!--> fills this with for loop from json automaticaly -->
+	</div>
+	<div class="clubs1">
+	<!--> fills this with for loop from json automaticaly -->
+	</div>
+	<div class="clubs2">
+	<!--> fills this with for loop from json automaticaly -->
+	</div>
 	<div class="topnav">
 		<center>
 			<a href="/trinityclubs.html">Trinity Clubs</a>
@@ -311,15 +290,6 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
   }
 </script>
 	</div>
-			<div class="clubs">
-  <!--> fills this with for loop from json automaticaly -->
-		</div>
-    <div class="clubs1">
-  <!--> fills this with for loop from json automaticaly -->
-    </div>
-		<div class="clubs2">
-	<!--> fills this with for loop from json automaticaly -->
-		</div>
     <script>
       var side =2;
       document.getElementsByClassName('clubs')[0].innerHTML = '';
