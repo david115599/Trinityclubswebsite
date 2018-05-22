@@ -33,3 +33,11 @@ http.createServer(function (req, res) {
     return res.end();
   });
 }).listen(8080);
+
+var express = require('express');
+var router = express.Router();
+router.post('/JSONS', function(req, res) {
+    console.log(req);
+    console.log('req received');
+    res.redirect('/');
+});

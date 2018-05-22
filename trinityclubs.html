@@ -248,15 +248,26 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		$.ajax({
     url:'http://localhost:8080/JSONS/'+profile.getEmail()+'.json',
     type:'HEAD',
-    error: function()
-    {
+    error: function(){
         console.log("new user");
-
+				$.ajax({
+						type: "POST",
+						url: " http://localhost:8080/JSONS/users.json",
+						timeout: 2000,
+						data: { user: profile.getEmail() },
+						success: function(data) {
+								//show content
+								console.log('new user registered!')
+						},
+						error: function(jqXHR, textStatus, err) {
+								//show error message
+								console.log('text status '+textStatus+', err '+err)
+						}
+				});
     },
-    success: function()
-    {
+    success: function(){
         console.log("old user");
-    }
+    },
 });
 
 }
@@ -368,5 +379,4 @@ function getDateTime() {
 
 }
 </script>
-
 </html>
