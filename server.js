@@ -38,6 +38,7 @@ var express = require('express');
 var router = express.Router();
 router.post('/JSONS', function(req, res) {
     console.log(req);
+    console.log(res);
     console.log('req received');
     res.redirect('/');
 });
