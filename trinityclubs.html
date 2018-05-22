@@ -252,7 +252,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
         console.log("new user");
 				$.ajax({
 						type: "POST",
-						url: " http://localhost:8080/JSONS/users.json",
+						url: " http://localhost:8080/JSONS/",
 						timeout: 2000,
 						data: { user: profile.getEmail() },
 						success: function(data) {
