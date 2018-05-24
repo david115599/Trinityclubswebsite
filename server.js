@@ -32,12 +32,20 @@ http.createServer(function (req, res) {
     res.write(data);
     return res.end();
   });
+
 var queryData = url.parse(req.url, true).query;
   res.writeHead(200, {"Content-Type": "text/plain"});
 
   if (queryData.name) {
     // user told us their name in the GET request, ex: http://host:8000/?name=Tom
-    console.log(queryData);
+    console.log(queryData.name);
+    let data = JSON.stringify(queryData.name, null, 2);
+
+fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
+    if (err) throw err;
+    console.log('User written to file');
+});
+
 
   }
 }).listen(8080);

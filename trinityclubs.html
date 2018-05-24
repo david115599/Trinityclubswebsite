@@ -246,7 +246,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
 
 		$.ajax({
-    url:'http://localhost:8080/JSONS/'+profile.getEmail()+'.json',
+    url:'http://localhost:8080/JSONS/USERS/'+profile.getId()+'.json',
     type:'HEAD',
     error: function(){
         console.log("new user");
@@ -254,19 +254,12 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 						type: "GET",
 						url: " http://localhost:8080",
 						timeout: 2000,
-						data: { name: profile.getEmail() },
-						success: function(data) {
-								//show content
-								console.log('new user registered!');
-						},
-						error: function(jqXHR, textStatus, err) {
-								//show error message
-								console.log('text status '+textStatus+', err '+err);
-						}
+						data: { name: profile.getId() },
 				});
+					console.log('new user registered!');
     },
     success: function(){
-        console.log("old user");
+        console.log("Returing User");
     },
 });
 
