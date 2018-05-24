@@ -45,7 +45,17 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     if (err) throw err;
     console.log('User written to file');
 });
-
-
   }
+
+
+//need to find a way to prevent acess to user data by typing the path into url  
+if(q.pathname == "/JSONS"){
+    res.writeHead(403, {'Content-Type': 'text/html'});
+      return res.end('Access Forbidden');
+};
+if(q.pathname == "/JSONS/USERS"){
+  res.writeHead(403, {'Content-Type': 'text/html'});
+    return res.end('Access Forbidden');
+};
+
 }).listen(8080);
