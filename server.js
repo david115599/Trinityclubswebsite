@@ -26,7 +26,7 @@ http.createServer(function (req, res) {
   fs.readFile(filename, function(err, data) {
     if (err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
-      return res.end("404 Not Found: (such empty :) )");
+      return res.end("loading... Jk it will never load: 404 Not Found:  (such empty :) )");
     }
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(data);
@@ -36,7 +36,7 @@ http.createServer(function (req, res) {
 
 request.post(
     'http://www.localhost:8080/JSONS/',
-    { json: { user: 'value' } },
+    { json: { user: 'body' } },
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body)
