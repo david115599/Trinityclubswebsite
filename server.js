@@ -32,23 +32,12 @@ http.createServer(function (req, res) {
     res.write(data);
     return res.end();
   });
-  var request = require('request');
+var queryData = url.parse(req.url, true).query;
+  res.writeHead(200, {"Content-Type": "text/plain"});
 
-request.post(
-    'http://www.localhost:8080/JSONS/',
-    { json: { user: 'body' } },
-    function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            console.log(body)
-        }
-    }
-);
+  if (queryData.name) {
+    // user told us their name in the GET request, ex: http://host:8000/?name=Tom
+    console.log(queryData);
+
+  }
 }).listen(8080);
-
-/*var express = require('express');
-var router = express.Router();
-router.post('/JSONS/', function(req, res) {
-    console.log(req);
-    console.log('req received');
-    res.redirect('/');
-});*/
