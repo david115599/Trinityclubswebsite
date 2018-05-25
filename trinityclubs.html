@@ -62,10 +62,11 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		background-color: rgb(196,165,9) ;
 		overflow: hidden;
 		position: fixed;
-		width: 90%;
+		width: 75.4%;
 		z-index: 1;
 		top: 0;
 		left: 15%;
+		right: 150px;
 	}
 
 	/* Style the links inside the navigation bar */
@@ -270,9 +271,9 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	function renderButton() {
 		gapi.signin2.render('my-signin2', {
 			'scope': 'profile email',
-			'width': 240,
+			'width': 187,
 			'height': 50,
-			'longtitle': true,
+			'longtitle': false,
 			'theme': 'dark',
 			'onsuccess': onSuccess,
 			'onfailure': onFailure
