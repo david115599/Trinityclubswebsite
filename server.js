@@ -46,9 +46,19 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     console.log('User written to file');
 });
   }
+  /*var json = fs.readFile('JSONS/clubs.json');
+  var obj = JSON.parse(json);
+  for(var i = 0 ;i<=obj.length; i++){
+  let data = {
+"test"
+  }
+  fs.writeFile('clubs/'+obj(i)+'.html', data, (err) => {
+      if (err) throw err;
+      console.log('clubs written to files');
+  });
+}*/
 
-
-//need to find a way to prevent acess to user data by typing the path into url  
+//need to find a way to prevent acess to user data by typing the path into url
 if(q.pathname == "/JSONS"){
     res.writeHead(403, {'Content-Type': 'text/html'});
       return res.end('Access Forbidden');
