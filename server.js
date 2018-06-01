@@ -50,19 +50,19 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
 
 
 
-  fs.readFile( 'JSONS/clubs.json', function (err, clublist) {
-  var jsonData = JSON.stringify(clublist);
-  var obj = JSON.parse(jsonData);
+  var clublist=fs.readFileSync("JSONS/clubs.json")
+  var obj = JSON.parse(clublist);
+  console.log(obj);
+
+
   for(var i = 0 ;i<=obj.length; i++){
-    console.log(obj(i))
-  let data = (
-"test");
-  fs.writeFile('clubs/'+obj(i)+'.html', data, (err) => {
+    console.log(obj[i]);
+  let data = ("test "+obj[i]);
+  fs.writeFile('clubs/'+obj[i]+'.html', data, (err) => {
       if (err) throw err;
       console.log('clubs written to files');
   });
 }
-})
 
 
 
