@@ -46,22 +46,26 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     console.log('User written to file');
 });
   }
-  /*
-  fs.readFile( 'JSONS/clubs.json', function (err, json) {
-  if (err) {
-    throw err;
-  }
-  var obj = JSON.parse(json);
+
+
+
+
+  fs.readFile( 'JSONS/clubs.json', function (err, clublist) {
+  var jsonData = JSON.stringify(clublist);
+  var obj = JSON.parse(jsonData);
   for(var i = 0 ;i<=obj.length; i++){
-  let data = {
-"test"
-  }
+    console.log(obj(i))
+  let data = (
+"test");
   fs.writeFile('clubs/'+obj(i)+'.html', data, (err) => {
       if (err) throw err;
       console.log('clubs written to files');
   });
 }
-}*/
+})
+
+
+
 
 //need to find a way to prevent acess to user data by typing the path into url
 if(q.pathname == "/JSONS"){
