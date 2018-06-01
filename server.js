@@ -46,7 +46,11 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     console.log('User written to file');
 });
   }
-  /*var json = fs.readFile('JSONS/clubs.json');
+  /*
+  fs.readFile( 'JSONS/clubs.json', function (err, json) {
+  if (err) {
+    throw err;
+  }
   var obj = JSON.parse(json);
   for(var i = 0 ;i<=obj.length; i++){
   let data = {
@@ -56,6 +60,7 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
       if (err) throw err;
       console.log('clubs written to files');
   });
+}
 }*/
 
 //need to find a way to prevent acess to user data by typing the path into url
