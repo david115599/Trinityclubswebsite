@@ -26,7 +26,7 @@ http.createServer(function (req, res) {
   fs.readFile(filename, function(err, data) {
     if (err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
-      return res.end("loading... Jk it will never load: 404 Not Found:  (such empty :) )");
+      return res.end("!!ERROR!! 404 not found. This falure is unexeptable, the developer responsible will be terminated to enusre that this does not occur again.");
     }
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(data);
@@ -45,7 +45,7 @@ var queryData = url.parse(req.url, true).query;
   if (queryData.name) {
     // user told us their name in the GET request, ex: http://host:8000/?name=Tom
     console.log(queryData.name);
-    let data = '["name",'+JSON.stringify(queryData.name, null, 2)+"]";
+    let data = '[["name",'+JSON.stringify(queryData.name, null, 2)+"]]";
 
 fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     if (err) throw err;

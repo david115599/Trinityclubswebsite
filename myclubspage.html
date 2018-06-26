@@ -272,7 +272,9 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	 $.getJSON("/JSONS/USERS/"+googleUser.getBasicProfile().getId()+".json", function(myclubs) {
 		 console.log(myclubs);
 		 $.each(myclubs, function (index, value) {
+	if (index="clubs") {
 	console.log(getDateTime());
+	console.log(index);
 	console.log(value);
 	if(side==2){
 	document.getElementsByClassName('clubs')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>  ';
@@ -285,6 +287,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	else if (side==0) {
 		document.getElementsByClassName('clubs2')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a> </div>  ';
 		side=2;
+	}
 	}
 	})
 	})
