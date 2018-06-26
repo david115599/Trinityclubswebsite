@@ -45,7 +45,7 @@ var queryData = url.parse(req.url, true).query;
   if (queryData.name) {
     // user told us their name in the GET request, ex: http://host:8000/?name=Tom
     console.log(queryData.name);
-    let data = JSON.stringify(queryData.name, null, 2);
+    let data = '"name":'+JSON.stringify(queryData.name, null, 2);
 
 fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     if (err) throw err;

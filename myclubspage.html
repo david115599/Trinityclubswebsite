@@ -302,9 +302,9 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
       document.getElementsByClassName('clubs')[0].innerHTML = '';
       document.getElementsByClassName('clubs1')[0].innerHTML = '';
 			      document.getElementsByClassName('clubs2')[0].innerHTML = '';
-       $.getJSON("/JSONS/clubs.json", function(clubs) {
-         console.log(clubs)
-         $.each(clubs, function (index, value) {
+       $.getJSON("/JSONS/"+profile.getId()+".json", function(myclubs) {
+         console.log(myclubs)
+         $.each(myclubs, function (clubs, value) {
       console.log(getDateTime());
 			if(side==2){
 		  document.getElementsByClassName('clubs')[0].innerHTML += '<div><a href="/clubs/'+value+'.html"> <img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1> </a></div>  ';
@@ -320,7 +320,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 			}
       })
       })
-          console.log("clubs loaded");
+          console.log("myclubs loaded");
     </script>
 </body>
 
