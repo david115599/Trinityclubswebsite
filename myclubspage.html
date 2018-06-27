@@ -26,7 +26,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		background-color: rgb(255,255,255);
 
 	}
-	.sidenav {
+	.sidenavl {
 		height: 100%;
 		width: 15%;
 		position: fixed;
@@ -38,7 +38,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		padding-top: 20px;
 	}
 
-	.sidenav a {
+	.sidenavl a {
 		padding: 6px 8px 6px 16px;
 		text-decoration: none;
 		font-size: 25px;
@@ -46,19 +46,46 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		display: block;
 	}
 
-	.sidenav a:hover {
+	.sidenavl a:hover {
+		background-color: rgb(196,165,9);
+	}
+
+	.sidenavr {
+		height: 100%;
+		width: 138.5px;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		background-color: rgb(30,50,200);
+		overflow-x: hidden;
+		padding-top: 20px;
+	}
+
+	.sidenavr a {
+		padding: 6px 8px 6px 16px;
+		text-decoration: none;
+		font-size: 25px;
+		color: white;
+		display: block;
+	}
+
+	.sidenavr a:hover {
 		background-color: rgb(196,165,9);
 	}
 
 	.main {
-		margin-left: 160px; /* Same as the width of the sidenav */
+		margin-left: 160px; /* Same as the width of the sidenavl */
+		margin-right: 160px; /* Same as the width of the sidenavr */
 		font-size: 28px; /* Increased text to enable scrolling */
 		padding: 0px 10px;
 	}
 
 	@media screen and (max-height: 450px) {
-		.sidenav {padding-top: 15px;}
-		.sidenav a {font-size: 18px;}
+		.sidenavl {padding-top: 15px;}
+		.sidenavl a {font-size: 18px;}
+		.sidenavr {padding-top: 15px;}
+		.sidenavr a {font-size: 18px;}
 	}
 	.topnav {
 		background-color: rgb(196,165,9) ;
@@ -211,7 +238,8 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 </style>
 </head>
 <body>
-	<div class="sidenav">
+	<div class="sidenavl">
+		<a href="/trinityclubs.html">Home</a>
 		<a href="/Calender.html">Calendar</a>
 		<a href="/placeholder.html">About</a>
 		<a href="/placeholder.html">Club Charter</a>
@@ -220,6 +248,11 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 		<a href="https://www.trinityschoolnyc.org/page">Trinity Website</a>
 		<a href="/myclubspage.html">My clubs</a>
 	</div>
+	<div class="sidenavr">
+	<!--> page specific function/ad bar -->
+	<a href="/addclub.html">Add Club</a>
+	</div>
+
 	<div class="clubs">
 	<!--> fills this with for loop from json automaticaly -->
 	</div>
@@ -269,11 +302,10 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	document.getElementsByClassName('clubs')[0].innerHTML = '';
 	document.getElementsByClassName('clubs1')[0].innerHTML = '';
 	document.getElementsByClassName('clubs2')[0].innerHTML = '';
-	 $.getJSON("/JSONS/USERS/"+googleUser.getBasicProfile().getId()+".json", function(myclubs) {
+	 $.getJSON("/JSONS/USERS/"+googleUser.getBasicProfile().getId()+"clubs.json", function(myclubs) {
 		 console.log(myclubs);
 		 $.each(myclubs, function (index, value) {
 	if (index="clubs") {
-	console.log(getDateTime());
 	console.log(index);
 	console.log(value);
 	if(side==2){

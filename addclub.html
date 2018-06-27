@@ -250,6 +250,15 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 	<div class="sidenavr">
 	<!--> page specific function/ad bar -->
 	</div>
+	<div class="clubs">
+	<!--> fills this with for loop from json automaticaly -->
+	</div>
+	<div class="clubs1">
+	<!--> fills this with for loop from json automaticaly -->
+	</div>
+	<div class="clubs2">
+	<!--> fills this with for loop from json automaticaly -->
+	</div>
 	<div class="topnav">
 		<center>
 			<a href="/trinityclubs.html">Trinity Clubs</a>
@@ -317,9 +326,59 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
     });
   }
 </script>
-	<div class="clubs">
-		<h1>Event Calander</h1>
-		<iframe src="https://calendar.google.com/calendar/embed?src=h696m8pi6mf9lom1dd1jaak6s4%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 	</div>
-	</body>
-	</html>
+    <script>
+      var side =2;
+      document.getElementsByClassName('clubs')[0].innerHTML = '';
+      document.getElementsByClassName('clubs1')[0].innerHTML = '';
+			      document.getElementsByClassName('clubs2')[0].innerHTML = '';
+       $.getJSON("/JSONS/clubs.json", function(clubs) {
+         console.log(clubs)
+         $.each(clubs, function (index, value) {
+      console.log(getDateTime());
+			if(side==2){
+		  document.getElementsByClassName('clubs')[0].innerHTML += '<div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1><button type="button" onclick="alert("Hello world"!)">add club</button></div>';
+		  side=1;
+		  }
+		  else if (side==1) {
+				document.getElementsByClassName('clubs1')[0].innerHTML += '<div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1><button type="button" onclick="alert("Hello world"!)">add club</button></div>';
+		    side=0;
+		  }
+			else if (side==0) {
+				document.getElementsByClassName('clubs2')[0].innerHTML += '<div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1><button type="button" onclick="alert("Hello world"!)">add club</button></div>';
+				side=2;
+			}
+      })
+      })
+          console.log("clubs loaded");
+    </script>
+</body>
+
+<script>
+
+function getDateTime() {
+
+    var date = new Date();
+
+    var hour = date.getHours();
+    hour = (hour < 10 ? "0" : "") + hour;
+
+    var min  = date.getMinutes();
+    min = (min < 10 ? "0" : "") + min;
+
+    var sec  = date.getSeconds();
+    sec = (sec < 10 ? "0" : "") + sec;
+
+    var year = date.getFullYear();
+
+    var month = date.getMonth() + 1;
+    month = (month < 10 ? "0" : "") + month;
+
+    var day  = date.getDate();
+    day = (day < 10 ? "0" : "") + day;
+
+    return year + ":" + month + ":" + day + ":" + hour + ":" + min + ":" + sec;
+
+}
+</script>
+</html>
