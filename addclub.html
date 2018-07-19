@@ -338,7 +338,7 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
          $.each(clubs, function (index, value) {
       console.log(getDateTime());
 			if(side==2){
-		  document.getElementsByClassName('clubs')[0].innerHTML += '<button type="button" onclick="addclub("'+value+'")"><p><div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1></div></p></button>';
+		  document.getElementsByClassName('clubs')[0].innerHTML += '<button type="button" onclick="addclub('+value+')"><p><div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1></div></p></button>';
 		  side=1;
 		  }
 		  else if (side==1) {
