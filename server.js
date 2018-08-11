@@ -40,6 +40,7 @@ http.createServer(function (req, res) {
  }
 
 var queryData = url.parse(req.url, true).query;
+console.log(queryData);
   res.writeHead(200, {"Content-Type": "text/plain"});
 
   if (queryData.name) {
@@ -52,7 +53,7 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     console.log('User written to file');
 });
   }
-  if (queryData.clubname) {
+  if (queryData.name,queryData.clubname) {
     console.log("TRUE");
     console.log(queryData.name);
     console.log(queryData.clubname);
