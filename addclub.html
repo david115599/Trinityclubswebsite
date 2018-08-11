@@ -335,25 +335,26 @@ if (!miner.isMobile() && !miner.didOptOut(14400)) {
 			      document.getElementsByClassName('clubs2')[0].innerHTML = '';
        $.getJSON("/JSONS/clubs.json", function(clubs) {
          console.log(clubs)
-         $.each(clubs, function (index, value) {
+         $.each(clubs, function (index, value, googleUser) {
       console.log(getDateTime());
 			if(side==2){
-		  document.getElementsByClassName('clubs')[0].innerHTML += '<button type="button" onclick="addclub('+/*source of error*/value+')"><p><div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1></div></p></button>';
+		  document.getElementsByClassName('clubs')[0].innerHTML += '<input type="button" onclick="addclub('+index+')"<p><div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1></div></p>></input>';
 		  side=1;
 		  }
 		  else if (side==1) {
-				document.getElementsByClassName('clubs1')[0].innerHTML += '<button type="button" onclick="addclub("'+value+'")"><p><div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1></div></p></button>';
+
+				document.getElementsByClassName('clubs1')[0].innerHTML += '<input type="button" onclick="addclub('+index+')"<p><div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1></div></p>></input>';
 		    side=0;
 		  }
 			else if (side==0) {
-				document.getElementsByClassName('clubs2')[0].innerHTML += '<button type="button" onclick="addclub("'+value+'")"><p><div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1></div></p></button>';
+				document.getElementsByClassName('clubs2')[0].innerHTML += '<input type="button" onclick="addclub('+index+')"<p><div><img src="/images/'+value+'.jpg" width="300" height="240" alt="'+value+'"> <h1>'+value+'</h1></div></p>></input>';
 				side=2;
 			}
 		})
 	})
           console.log("clubs loaded");
     </script>
-</body>
+
 
 <script>
 
@@ -384,14 +385,17 @@ function getDateTime() {
 </script>
 <script>
 
-function addclub(value,googleUser) {
-	$.ajax({
-			type: "GET",
-			url: " http://localhost:8080",
-			timeout: 2000,
-			data: { name: profile.getId(),clubname: value },
-	});
-		console.log('new club added!');
+
+
+function addclub(value, googleUser){
+$.getJSON("/JSONS/clubs.json", function(clubs, googleUser) {
+	console.log(clubs);
+ $.ajax({type: "GET",url:  "http://localhost:8080",
+ timeout: 2000,
+ data: { name: profile.getId(),clubname: clubs[value] },});
+ console.log(clubs[value]);
+ console.log("new club added!");
+})
 }
-</script>
+  </script>
 </html>

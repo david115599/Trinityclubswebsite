@@ -26,7 +26,7 @@ http.createServer(function (req, res) {
   fs.readFile(filename, function(err, data) {
     if (err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
-      return res.end("!!ERROR!! 404 not found. This falure is unexeptable, the developer responsible will be terminated to enusre that this does not occur again.");
+      return res.end("!!ERROR!! 404 not found. This falure is unexeptable, the developer responsible will be terminated to enusre that this does not occur again. <form>  <input type='button' value='Go back!' onclick='history.back()'></form>");
     }
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(data);
@@ -52,7 +52,10 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     console.log('User written to file');
 });
   }
-  if (queryData.addmyclub) {
+  if (queryData.clubname) {
+    console.log("TRUE");
+    console.log(queryData.name);
+    console.log(queryData.clubname);
 
     //club adding page handler
 
