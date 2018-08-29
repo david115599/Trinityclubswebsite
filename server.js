@@ -53,12 +53,23 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     console.log('User written to file');
 });
   }
-  if (queryData.name,queryData.clubname) {
+  var queryData = url.parse(req.url, true,req.url, true).query;
+  if (queryData.name & queryData.clubname) {
     console.log("TRUE");
     console.log(queryData.name);
     console.log(queryData.clubname);
 
     //club adding page handler
+    var json=fs.readFileSync(''+queryData.name+'clubs.json')
+    console.log(json);
+    var ClublistP=JSON.parse(json);
+    ClublistP.push(queryData.clubname);
+    console.log(ClublistP);
+    var data = ('('+ClublistP+')');
+    fs.writeFile(''+queryData.name+'clubs.json', data, (err) => {
+        if (err) throw err;
+        console.log('addclubs worked');
+    });
 
   }
 
@@ -67,15 +78,15 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
 
   var clublist=fs.readFileSync("JSONS/clubs.json")
   var obj = JSON.parse(clublist);
-  console.log(obj);
+  //console.log(obj);
 
 
   for(var i = 0 ;i<=obj.length; i++){
-    console.log(obj[i]);
+  //  console.log(obj[i]);
   let data = '<!DOCTYPE html><body><h2>'+obj[i]+ '</h2><img src="../images/' +obj[i]+  '.jpg" alt="' +obj[i]+  '" style="width:304px;height:228px;"></body></html>';
   fs.writeFile('clubs/'+obj[i]+'.html', data, (err) => {
       if (err) throw err;
-      console.log('clubs written to files');
+    //  console.log('clubs written to files');
   });
 }
 
