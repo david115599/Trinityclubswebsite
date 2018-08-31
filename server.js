@@ -52,25 +52,42 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'.json', data, (err) => {
     if (err) throw err;
     console.log('User written to file');
 });
-  }
-  var queryData = url.parse(req.url, true,req.url, true).query;
-  if (queryData.name & queryData.clubname) {
+}
+
+
+
+
+if (queryData.name) {
+  // user told us their name in the GET request, ex: http://host:8000/?name=Tom
+  console.log(queryData.name);
+  let data1 = '';
+
+fs.writeFile('JSONS/USERS/'+queryData.name+'clubs.json', data1, (err) => {
+  if (err) throw err;
+  console.log('User written to file');
+});
+}
+
+
+
+
+  var addclubData = url.parse(req.url, true).query;
+  if (addclubData.clubname) {
     console.log("TRUE");
-    console.log(queryData.name);
-    console.log(queryData.clubname);
+    console.log(addclubData.name);
+    console.log(addclubData.clubname);
 
     //club adding page handler
-    var json=fs.readFileSync(''+queryData.name+'clubs.json')
+    var json=fs.readFileSync(''+addclubData.name+'clubs.json')
     console.log(json);
     var ClublistP=JSON.parse(json);
-    ClublistP.push(queryData.clubname);
+    ClublistP.push(addclubData.clubname);
     console.log(ClublistP);
     var data = ('('+ClublistP+')');
-    fs.writeFile(''+queryData.name+'clubs.json', data, (err) => {
+    fs.writeFile(''+addclubData.name+'clubs.json', data, (err) => {
         if (err) throw err;
         console.log('addclubs worked');
     });
-
   }
 
 

@@ -394,7 +394,7 @@ $.getJSON("/JSONS/clubs.json", function(clubs, googleUser) {
  $.ajax({type: "GET",
  url:  "http://localhost:8080",
  timeout: 2000,
- data: '{ "name": '+profile.getId()+' , "clubname": '+clubs[value]+' }',
+ data: '"name": '+profile.getId()+' , "clubname": '+clubs[value]+'',
 
 });
  console.log(clubs[value]);
