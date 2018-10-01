@@ -40,7 +40,7 @@ http.createServer(function (req, res) {
  }
 
 var queryData = url.parse(req.url, true).query;
-console.log(queryData);
+//console.log(queryData);
   res.writeHead(200, {"Content-Type": "text/plain"});
 
   if (queryData.name) {
@@ -68,23 +68,25 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'clubs.json', data1, (err) => {
 });
 }
 
+var queryData = url.parse(adr, true);;
+console.log(queryData);
+console.log(queryData);
+console.log(queryData);
 
-
-
-  var addclubData = url.parse(req.url, true).query;
-  if (addclubData.clubname) {
-    console.log("TRUE");
-    console.log(addclubData.name);
-    console.log(addclubData.clubname);
+  res.writeHead(200, {"Content-Type": "text/plain"});
+  if (queryData.name) {
+    console.log("Got This Far");
+    console.log(queryData.name);
+    console.log(queryData.clubname);
 
     //club adding page handler
-    var json=fs.readFileSync(''+addclubData.name+'clubs.json')
+    var json=fs.readFileSync(''+queryData.name+'clubs.json')
     console.log(json);
     var ClublistP=JSON.parse(json);
-    ClublistP.push(addclubData.clubname);
+    ClublistP.push(queryData.clubname);
     console.log(ClublistP);
     var data = ('('+ClublistP+')');
-    fs.writeFile(''+addclubData.name+'clubs.json', data, (err) => {
+    fs.writeFile(''+queryData.name+'clubs.json', data, (err) => {
         if (err) throw err;
         console.log('addclubs worked');
     });
