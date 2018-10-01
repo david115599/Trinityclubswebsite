@@ -391,6 +391,7 @@ function addclub(value, googleUser){
 $.getJSON("/JSONS/clubs.json", function(clubs, googleUser) {
 	console.log(clubs);
 	var dat;
+
  $.ajax({type: "GET",
  url:  "http://localhost:8080",
  timeout: 2000,

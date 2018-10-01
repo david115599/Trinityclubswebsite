@@ -70,8 +70,8 @@ fs.writeFile('JSONS/USERS/'+queryData.name+'clubs.json', data1, (err) => {
 
 var queryData = url.parse(adr, true);;
 console.log(queryData);
-console.log(queryData);
-console.log(queryData);
+console.log(queryData.query);
+//console.log(queryData);
 
   res.writeHead(200, {"Content-Type": "text/plain"});
   if (queryData.name) {
@@ -95,7 +95,7 @@ console.log(queryData);
 
 
 
-  var clublist=fs.readFileSync("JSONS/clubs.json")
+  var clublist=fs.readFileSync("JSONS/clubs.json");
   var obj = JSON.parse(clublist);
   //console.log(obj);
 
